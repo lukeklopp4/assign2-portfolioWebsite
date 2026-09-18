@@ -1,3 +1,3 @@
-# lukeklopp.github.io
+# assign2-portfolioWebsite
 
-assignment 2
+live deployment
