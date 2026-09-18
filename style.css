@@ -1,0 +1,517 @@
+/*
+ - Lucas Klopp
+ - Assignment 2 - Portfolio Website Development
+ - file: style.css
+ - Professor Ratul Mazumder
+
+File Contents:
+    1. variables
+    2. page basics
+    3. header and navigation
+    4. rows and columns
+    5. Row 1: About Me, Skills
+    6. Row 2: Education, Hobbies, Experience
+    7. Row 3: Blog, Projects, Community Service
+    8. footer: Contact
+*/
+
+/*
+-------------------variables--------------------
+*/
+:root{
+    --main-radius: 5px;
+    --main-padding: 30px;
+    --navy: #12355B;
+    --gold: #D9A21B;
+    --white: #ffffff;
+    --page-gray: #F5F7FA;
+    --line-gray: #D5DBE3;
+    --text-dark: #1F2933;
+}
+
+
+/*
+-------------------page basics--------------------
+*/
+
+/*
+ - gray page background outside of 1200px page
+ - default font and text color
+*/
+body{
+    margin: 0;
+    padding: 30px 0;
+    background: var(--page-gray);
+    font-family: Verdana, Tahoma, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--text-dark);
+}
+
+/*
+ - holds the whole page, 1200px
+ - draws the top and left lines of the page
+    - individual sections draw bottom and right
+*/
+.wrapper{
+    width: 1200px;
+    margin: 0 auto;
+    background: var(--white);
+    border-top: 1px solid var(--line-gray);
+    border-left: 1px solid var(--line-gray);
+}
+
+/* removes default spacing */
+h1, h2, h3, p, ul, figure{
+    margin: 0;
+    padding: 0;
+}
+
+/* clears list styles */
+ul{
+    list-style: none;
+}
+
+/* section heading with a gold bar detail */
+h2{
+    height: 26px;
+    margin-bottom: 22px;
+    padding-left: 12px;
+    border-left: 4px solid var(--gold);
+    font-size: 21px;
+    line-height: 26px;
+    color: var(--navy);
+}
+
+/* secondary heading for inside sections */
+h3{
+    font-size: 15px;
+    color: var(--navy);
+}
+
+/* default paragraph size */
+p{
+    font-size: 14px;
+}
+
+/* photo cropped to fill box instead of squeezing */
+img{
+    object-fit: cover;
+}
+
+
+/*
+-------------------header and navigation--------------------
+*/
+
+/* navy bar on top */
+header{
+    height: 70px;
+    padding: 0 var(--main-padding);
+    background: var(--navy);
+    line-height: 70px;
+}
+
+/* my name top left */
+header h1{
+    float: left;
+    font-size: 24px;
+}
+
+/* every link in the header is white with no underline */
+header a{
+    color: var(--white);
+    text-decoration: none;
+}
+
+/* float menu to right */
+nav{
+    float: right;
+}
+
+/* spacing apart menu items */
+nav li{
+    float: left;
+    margin-left: 24px;
+    font-size: 14px;
+}
+
+/* gold line under each menu item */
+nav a{
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--gold);
+}
+
+
+/*
+-------------------rows and columns--------------------
+*/
+
+/* row wraps around its floated columns */
+.row{
+    overflow: auto;
+}
+
+/*
+ - one column, floated left so three fit in a row
+ - 400px wide: 339 + 30 + 30 padding + 1 border
+ - 345px tall: 284 + 30 + 30 padding + 1 border
+ - overflow hidden keeps content inside the box
+*/
+section{
+    float: left;
+    width: 339px;
+    height: 284px;
+    padding: var(--main-padding);
+    border-right: 1px solid var(--line-gray);
+    border-bottom: 1px solid var(--line-gray);
+    overflow: hidden;
+}
+
+/* About Me is two columns wide, 800px */
+#about{
+    width: 739px;
+}
+
+
+/*
+-------------------Row 1: About Me--------------------
+*/
+
+/* profile photo on the left */
+.profile-photo{
+    float: left;
+    width: 165px;
+    height: 220px;
+    margin-right: 30px;
+    border-radius: var(--main-radius);
+}
+
+/* text column to the right of the photo */
+.about-text{
+    float: left;
+    width: 544px;
+}
+
+/* slightly bigger paragraphs with a gap between them */
+.about-text p{
+    margin-bottom: 14px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/*
+-------------------Row 1: Skills, Languages, and Tools--------------------
+*/
+
+/* smaller heading so the long title fits on one line */
+#skills h2{
+    font-size: 19px;
+}
+
+/* group name above each row of tags */
+#skills h3{
+    margin-bottom: 12px;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+/*
+ - one row of tags, indented under the group name
+ - wraps around its floated tags
+*/
+.tag-list{
+    overflow: auto;
+    margin-left: 14px;
+    margin-bottom: 29px;
+}
+
+/* single tag, small box with a rounded navy outline */
+.tag-list li{
+    float: left;
+    width: 42px;
+    height: 22px;
+    margin-right: 8px;
+    border: 1px solid var(--navy);
+    border-radius: var(--main-radius);
+    font-size: 11px;
+    line-height: 22px;
+    text-align: center;
+    color: var(--navy);
+}
+
+
+/*
+-------------------Row 2: Education--------------------
+*/
+
+/* bigger gap under the heading to match the gap between entries */
+#education h2{
+    margin-bottom: 42px;
+}
+
+/*
+ - one entry, shared by Education and Experience
+ - wraps around its floated dot and image
+*/
+.entry-list li{
+    margin-bottom: 42px;
+    overflow: auto;
+}
+
+/*
+ - gold bullet point in front of each entry
+ - margin-top centers it on the 80px entry
+*/
+.dot{
+    float: left;
+    width: 12px;
+    height: 12px;
+    margin-top: 34px;
+    margin-right: 10px;
+    background: var(--gold);
+    border-radius: 50%;
+}
+
+/* school image, floated left after the dot */
+.entry-list img{
+    float: left;
+    width: 80px;
+    height: 80px;
+    margin-right: 14px;
+    border-radius: var(--main-radius);
+}
+
+/* keeps entry text in its own column beside the dot and image */
+.entry-list h3, .entry-list p{
+    overflow: hidden;
+    margin-left: 20px;
+}
+
+/* entry title */
+.entry-list h3{
+    margin-bottom: 4px;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+/* entry description */
+.entry-list p{
+    font-size: 12px;
+    line-height: 18px;
+}
+
+
+/*
+-------------------Row 2: Hobbies--------------------
+*/
+
+/*
+ - one hobby, three fit in a row
+ - 4th, 5th and 6th drop to a second row
+*/
+figure{
+    float: left;
+    width: 113px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* hobby image centered in its figure */
+figure img{
+    display: block;
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 8px auto;
+    border-radius: var(--main-radius);
+}
+
+/* bold caption under each image */
+figcaption{
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 18px;
+    color: var(--navy);
+}
+
+
+/*
+-------------------Row 2: Experience--------------------
+*/
+
+/*
+ - smaller gap since there are three entries
+ - overflow visible lets the dot sit a little outside the entry
+*/
+#experience li{
+    margin-bottom: 24px;
+    overflow: visible;
+}
+
+/*
+ - centers the dot on the shorter 58px entry
+ - moves the dot slightly left
+*/
+#experience .dot{
+    margin-top: 23px;
+    margin-left: -6px;
+}
+
+
+/*
+-------------------Row 3: Blog--------------------
+*/
+
+/* blog image on the left */
+#blog img{
+    float: left;
+    width: 140px;
+    height: 180px;
+    margin-right: 20px;
+    border-radius: var(--main-radius);
+}
+
+/* text column to the right of the image */
+.blog-text{
+    float: left;
+    width: 179px;
+}
+
+/* same spacing for the blog title and paragraphs */
+.blog-text h3, .blog-text p{
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+/* title slightly bigger than the paragraphs */
+.blog-text h3{
+    font-size: 15px;
+}
+
+
+/*
+-------------------Row 3: Projects--------------------
+*/
+
+/*
+ - one project, two sit side by side
+ - everything inside is centered
+*/
+#projects article{
+    float: left;
+    width: 120px;
+    margin-left: 24px;
+    margin-right: 25px;
+    text-align: center;
+}
+
+/* project image centered in its column */
+#projects img{
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 12px auto;
+    border-radius: var(--main-radius);
+}
+
+/* project title, wraps onto two lines */
+#projects h3{
+    margin-bottom: 12px;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+/* tag list wraps around its floated tags */
+.project-tags{
+    overflow: auto;
+}
+
+/*
+ - single tag, same look as the Skills tags
+ - two fit per row, so four tags make a 2 x 2 grid
+*/
+.project-tags li{
+    float: left;
+    width: 50px;
+    height: 22px;
+    margin: 0 4px 12px 4px;
+    border: 1px solid var(--navy);
+    border-radius: var(--main-radius);
+    font-size: 11px;
+    line-height: 22px;
+    text-align: center;
+    color: var(--navy);
+}
+
+
+/*
+-------------------Row 3: Community Service--------------------
+*/
+
+/* holds the three photos, wraps around them */
+.service-photos{
+    overflow: auto;
+    margin-bottom: 14px;
+}
+
+/* three photos side by side */
+.service-photos img{
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin-right: 12px;
+    border-radius: var(--main-radius);
+}
+
+/* text under the photos */
+#service p{
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+
+
+/*
+-------------------footer: Contact--------------------
+*/
+
+/* navy bar on bottom */
+footer{
+    height: 89px;
+    padding: 0 var(--main-padding);
+    background: var(--navy);
+    border-right: 1px solid var(--navy);
+    border-bottom: 1px solid var(--navy);
+    line-height: 89px;
+}
+
+/*
+ - "Contact" on the left in white
+ - turns off the gold bar other headings have
+*/
+footer h2{
+    float: left;
+    width: 223px;
+    height: 89px;
+    margin-bottom: 0;
+    line-height: 89px;
+    color: var(--white);
+    border-left: none;
+    padding-left: 0;
+}
+
+/* three equal slots, link centered in each */
+footer li{
+    float: left;
+    width: 300px;
+    text-align: center;
+}
+
+/* oval gold outline around each link */
+footer a{
+    padding: 10px 26px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    color: var(--white);
+    text-decoration: none;
+}
